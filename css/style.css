@@ -1,0 +1,144 @@
+body{
+  color: white;
+  margin: 0;
+}
+ul, li{
+  display: block;
+}
+
+.menu{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+.menu_pad{
+  padding-top: 10px;
+}
+
+.menu__item_dropdown,
+.header-top_mobile{
+  display: none;
+}
+
+.menu__item_logo h1{
+  color: white;
+  font-size: 30px;
+}
+
+.menu__item_logo i{
+  color: white;
+  font-size: 40px;
+}
+
+.menu__item a,i{
+  font-size: 12px;
+  text-align: center center;
+  color: rgb(241, 244, 244);
+}
+
+
+
+.dropdown-menu a{
+  color: black;
+}
+
+.header-top,
+.header-mid,
+.header-bottom{
+  background: rgb(26, 100, 185);
+}
+
+.default-btn {
+  background-color: rgb(26, 100, 185);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 12px; /* Настраиваем размер текста */
+}
+
+
+.default-btn i {
+  font-size: 20px;
+}
+
+.default-btn p {
+  margin: 0;
+}
+
+.form-control {
+  font-size: 20px; 
+}
+
+.menu__item_logo h1,
+.menu__item_logo i,
+.default-btn {
+  line-height: 30px;
+}
+
+.header-top_mobile__nav{
+  color: rgb(5, 19, 34);
+  background-color: rgb(26, 100, 185);
+}
+
+.nav-item i{
+  font-size: 14px;
+}
+
+.scrollable-buttons {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scrollable-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.header-bottom__button{
+  white-space: nowrap;
+  background-color: transparent;
+  color: white;
+  border: 0px;
+  padding: 10px;
+}
+
+@media(max-width: 1200px){
+  .menu__item_dropdown{
+    display: block;
+  }
+
+  .menu__item_drop{
+    display: none;
+  }
+}
+
+@media(max-width: 1000px){
+  .header-top_mobile{
+    display: block;
+  }
+  .header-mid__control,
+  .header-top{
+    display: none;
+  }
+
+  .default-btn_mobile i{
+    font-size: 26px;
+  }
+
+  .menu__item_logo h1{
+    color: white;
+    font-size: auto;
+  }
+  
+  .menu__item_logo i{
+    color: white;
+    font-size: auto;
+  }
+
+  .phone-number i{
+    color: black;
+  }
+}
