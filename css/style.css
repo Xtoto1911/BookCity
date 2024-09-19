@@ -18,7 +18,7 @@ ul, li{
 }
 
 .menu__item_dropdown,
-.header-top_mobile{
+.header-top-mobile{
   display: none;
 }
 
@@ -79,7 +79,7 @@ ul, li{
   line-height: 30px;
 }
 
-.header-top_mobile__nav{
+.header-top-mobile__nav{
   color: rgb(5, 19, 34);
   background-color: rgb(26, 100, 185);
 }
@@ -105,6 +105,28 @@ ul, li{
   padding: 10px;
 }
 
+.main-carousel{
+  width: 70%;
+  height: 100%;
+}
+
+.main-carousel__item{
+  height: 450px;
+}
+
+.main-carousel__item img{
+  height: 100%;
+  width: 100%;
+  object-fit: fill; 
+}
+
+.main-information-block__link{
+  padding: 17px 24px 17px 24px;
+  margin: 2px;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 7px;
+}
+
 @media(max-width: 1200px){
   .menu__item_dropdown{
     display: block;
@@ -113,10 +135,18 @@ ul, li{
   .menu__item_drop{
     display: none;
   }
+
+  .main-carousel{
+    width: 100%;
+  }
+
+  .main-information-block{
+    margin-top: 20px;
+  }
 }
 
 @media(max-width: 1000px){
-  .header-top_mobile{
+  .header-top-mobile{
     display: block;
   }
   .header-mid__control,
@@ -141,4 +171,5 @@ ul, li{
   .phone-number i{
     color: black;
   }
+
 }
