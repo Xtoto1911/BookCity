@@ -1,0 +1,57 @@
+const products = [
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 1",
+        "description": "Description of Book 1"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 2",
+        "description": "Description of Book 2"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 3",
+        "description": "Description of Book 3"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 4",
+        "description": "Description of Book 4"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 5",
+        "description": "Description of Book 5"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 6",
+        "description": "Description of Book 6"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 7",
+        "description": "Description of Book 7"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 8",
+        "description": "Description of Book 8"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 9",
+        "description": "Description of Book 9"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 10",
+        "description": "Description of Book 10"
+      },
+      {
+        "image": "img/secondSlideMainHead.jpg",
+        "title": "Book Title 11",
+        "description": "Description of Book 11"
+      }
+    ];
