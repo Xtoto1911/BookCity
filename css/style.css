@@ -1,17 +1,32 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 body{
   color: white;
   margin: 0;
 }
-ul, li{
+
+.header-mid {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+
+ul, li, nav{
   display: block;
+  padding-left: 0;
 }
 
 h1,h2,h3,h4,h5,h6{
   margin: 0;
 }
 .menu{
-  padding: 10px;
   margin: 0;
+  padding: 0;
 }
 
 .menu_pad{
@@ -55,15 +70,14 @@ h1,h2,h3,h4,h5,h6{
   background-color: rgb(26, 100, 185);
   color: white;
   border: none;
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 82px;
   text-align: center;
-  font-size: 12px; /* Настраиваем размер текста */
 }
 
 
-.default-btn i {
-  font-size: 20px;
+.default-btn i{
+  font-size: 24px;
 }
 
 .default-btn p {
@@ -156,6 +170,11 @@ h1,h2,h3,h4,h5,h6{
   .header-top-mobile{
     display: block;
   }
+
+  .header-mid{
+    position: relative;
+  }
+
   .header-mid__control,
   .header-top{
     display: none;
