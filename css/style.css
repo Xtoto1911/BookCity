@@ -71,7 +71,7 @@ h1,h2,h3,h4,h5,h6{
   color: white;
   border: none;
   width: 90px;
-  height: 82px;
+  height: 75px;
   text-align: center;
 }
 
@@ -138,18 +138,106 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .carusel-cards .row {
-  flex-wrap: nowrap;  /* Позволяем карточкам переноситься на новую строку */
+  flex-wrap: nowrap;
 }
 
 .carusel-cards__item {
   margin: 10px 0;
-  height: 450px;  /* Добавляем вертикальные отступы между карточками */
+  height: 450px;
 }
 
 .product-carousel__inner {
-  padding-left: 15px;  /* Немного отступаем карточки от края карусели */
+  padding-left: 15px;
   padding-right: 15px;
 }
+
+.carousel-control-prev, .carousel-control-next{
+  pointer-events: none;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  pointer-events: fill;
+  background-color: aqua;
+
+}
+
+
+
+
+.footer {
+  background-color: #212529; /* Темный фон */
+  color: #ffffff; /* Белый текст */
+}
+
+.footer .footer-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer .footer-description {
+  font-size: 0.875rem;
+  max-width: 300px;
+}
+
+.footer .footer-socials svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer .footer-socials a {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.footer .footer-socials a:hover {
+  color: #007bff; /* Синий цвет при наведении */
+}
+
+.footer .footer-links a {
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer .footer-links a:hover {
+  color: #007bff;
+}
+
+
+
+
+.scroll-to-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 26px;
+  text-align: center;
+  cursor: pointer;
+  display: none; 
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3; /* Более темный синий при наведении */
+}
+
+/* Показ кнопки */
+.scroll-to-top.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
 
 @media(max-width: 1200px){
   .menu__item_dropdown{
@@ -180,6 +268,15 @@ h1,h2,h3,h4,h5,h6{
     display: none;
   }
 
+  .default-btn, .navbar-toggler{
+    background-color: rgb(26, 100, 185);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    text-align: center center;
+  }
+
   .default-btn_mobile i{
     font-size: 26px;
   }
@@ -196,6 +293,10 @@ h1,h2,h3,h4,h5,h6{
 
   .phone-number i{
     color: black;
+  }
+
+  .more-btn__title{
+    display: none;
   }
 
 }

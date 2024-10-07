@@ -48,9 +48,9 @@
   </header>
 
   <header class="header-top-mobile">
-    <nav class="navbar header-top-mobile__nav d-flex justify-content-between">
+    <nav class="navbar header-top-mobile__nav d-flex justify-content-between align-items-center">
       <div class="ms-3">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <button class="navbar-toggler p-0 d-flex align-items-center justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -114,7 +114,7 @@
   </div>
 
   <header class="header-mid">
-    <div class="container-xl d-flex justify-content-between align-items-center p-0 ps-md-3 pe-md-3">
+    <div class="container-xl d-flex justify-content-between align-items-center ps-md-3 pe-md-3">
       <nav class="header-mid__logo align-items-start">
         <ul class="menu d-flex align-items-center">
           <li class="menu__item menu__item_logo me-2"><i class="fa-solid fa-book-open-reader"></i></li>
@@ -163,7 +163,7 @@
     </div>
   </header>
 
-  <main class="main-page container-xl mt-4">
+  <main class="main-page container-xl mt-4 mb-4">
     <div class="main-carousel me-xl-auto">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -208,12 +208,12 @@
         <div class="carousel-inner product-carousel__inner" id="newProductCarouselInner">
           <!-- Карточки товаров будут загружаться сюда -->
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#newProductCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <button class="carousel-control-prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" type="button" data-bs-target="#newProductCarousel" data-bs-slide="prev"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#newProductCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <button class="carousel-control-next">
+          <span class="carousel-control-next-icon" aria-hidden="true" type="button" data-bs-target="#newProductCarousel" data-bs-slide="next"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -233,24 +233,67 @@
         <div class="carousel-inner product-carousel__inner" id="goodProductCarouselInner">
           <!-- Карточки товаров будут загружаться сюда -->
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#goodProductCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <div class="carousel-control-prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" type="button" data-bs-target="#goodProductCarousel" data-bs-slide="prev"></span>
           <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#goodProductCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </div>
+        <div class="carousel-control-next">
+          <span class="carousel-control-next-icon" aria-hidden="true" type="button" data-bs-target="#goodProductCarousel" data-bs-slide="next"></span>
           <span class="visually-hidden">Next</span>
-        </button>
+        </div>
       </div>
     </div>    
   </main>
-  <footer>
-
+  <footer class="footer bg-dark text-light pt-4 pb-4">
+    <div class="container-xl d-flex flex-column flex-lg-row justify-content-between align-items-start">
+      <!-- Левая часть футера -->
+      <div class="footer-left me-lg-5 mb-4 mb-lg-0">
+        <h5 class="footer-title">О магазине</h5>
+        <p class="footer-description">
+          BookCity - это онлайн-магазин книг, предлагающий широкий ассортимент литературы. У нас вы найдете новинки, классику и многое другое.
+        </p>
+        <div class="footer-socials d-flex mt-3">
+          <!-- ВК -->
+          <a href="#" class="text-light me-3" aria-label="ВКонтакте">
+            <i class="fab fa-vk fa-2x"></i>
+          </a>
+          <!-- Телеграм -->
+          <a href="#" class="text-light me-3" aria-label="Телеграм">
+            <i class="fab fa-telegram-plane fa-2x"></i>
+          </a>
+          <!-- Одноклассники -->
+          <a href="#" class="text-light me-3" aria-label="Одноклассники">
+            <i class="fab fa-odnoklassniki fa-2x"></i>
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="text-light" aria-label="YouTube">
+            <i class="fab fa-youtube fa-2x"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Правая часть футера -->
+      <div class="footer-right">
+        <h5 class="footer-title">Информация</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="#" class="text-light">Россия, Кострома</a></li>
+          <li><a href="#" class="text-light">Магазины</a></li>
+          <li><a href="#" class="text-light">Доставка и оплата</a></li>
+          <li><a href="#" class="text-light">Партнерская программа</a></li>
+          <li><a href="#" class="text-light">Бонусная программа</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
+  
+  <button onclick="scrollToTop()" id="scrollToTopBtn" class="scroll-to-top">
+    <p class="p-0 m-0">↑</p>
+  </button>
+  
 
 
   <script>
-    // Пример JSON с товарами
+
     const products = [
       { "image": "img/secondSlideMainHead.jpg", "title": "Book Title 1", "description": "Description of Book 1" },
       { "image": "img/secondSlideMainHead.jpg", "title": "Book Title 2", "description": "Description of Book 2" },
@@ -269,7 +312,7 @@
       const carouselInner = document.getElementById(id);
       let carouselItems = '';
       
-      // Определяем количество карточек на один слайд в зависимости от разрешения экрана
+
       let groupSize = 4
       if(window.innerWidth < 768){
         groupSize = 1
@@ -279,7 +322,7 @@
         groupSize = 4
       }
       
-      // Разделяем продукты на группы по groupSize карточек
+
       for (let i = 0; i < products.length; i += groupSize) {
         const isActive = i === 0 ? 'active' : '';  // Первый слайд активный
         carouselItems += `<div class="carousel-item ${isActive} carusel-cards"><div class="row justify-content-center">`;
@@ -288,7 +331,7 @@
         for (let j = i; j < i + groupSize && j < products.length; j++) {
           const product = products[j];
           carouselItems += `
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <a class="col-lg-3 col-md-4 col-sm-5 col-12 p-1" href = "#">
               <div class="card carusel-cards__item">
                 <img src="${product.image}" class="card-img-top" alt="${product.title}">
                 <div class="card-body">
@@ -296,7 +339,7 @@
                   <p class="card-text">${product.description}</p>
                 </div>
               </div>
-            </div>`;
+            </a>`;
         }
 
         carouselItems += `</div></div>`;
@@ -305,7 +348,7 @@
       carouselInner.innerHTML = carouselItems;
     }
 
-    // Добавляем товары в слайдер при загрузке страницы
+
     window.onload = function() {
       addProductsToCarousel(products,'newProductCarouselInner');
       addProductsToCarousel(products,'goodProductCarouselInner');
@@ -315,6 +358,21 @@
         addProductsToCarousel(products,'goodProductCarouselInner');
   });
 
+  window.onscroll = function() {
+      let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollToTopBtn.classList.add("show");
+      } else {
+        scrollToTopBtn.classList.remove("show");
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   </script>
   
   
