@@ -39,7 +39,8 @@
     "id": 7,
     "image": "img/secondSlideMainHead.jpg", 
     "price": "654", 
-    "title": "title of Book 7" },
+    "title": "title of Book 7" 
+  },
   { 
     "id": 8,
     "image": "img/secondSlideMainHead.jpg", 
@@ -71,63 +72,63 @@
     "title": "title of Book 12" 
   },
   { 
-    "id": 12,
-    "image": "img/secondSlideMainHead.jpg", 
-    "price": "230", 
-    "title": "title of Book 12" 
-  },
-  { 
     "id": 13,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "100", 
+    "price": "230", 
     "title": "title of Book 13" 
   },
   { 
     "id": 14,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "200", 
+    "price": "100", 
     "title": "title of Book 14" 
   },
   { 
     "id": 15,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "346", 
+    "price": "200", 
     "title": "title of Book 15" 
   },
   { 
     "id": 16,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "123", 
+    "price": "346", 
     "title": "title of Book 16" 
   },
   { 
     "id": 17,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "654", 
-    "title": "title of Book 17" },
+    "price": "123", 
+    "title": "title of Book 17" 
+  },
   { 
     "id": 18,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "876", 
-    "title": "title of Book 18" 
-  },
+    "price": "654", 
+    "title": "title of Book 18" },
   { 
     "id": 19,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "9897", 
+    "price": "876", 
     "title": "title of Book 19" 
   },
   { 
     "id": 20,
     "image": "img/secondSlideMainHead.jpg", 
-    "price": "2799", 
+    "price": "9897", 
     "title": "title of Book 20" 
   },
   { 
     "id": 21,
     "image": "img/secondSlideMainHead.jpg", 
+    "price": "2799", 
+    "title": "title of Book 21" 
+  },
+  { 
+    "id": 22,
+    "image": "img/secondSlideMainHead.jpg", 
     "price": "1999", 
-    "title": "title of Book 21"
+    "title": "title of Book 22"
   }
 ]
 
