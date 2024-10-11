@@ -6,10 +6,14 @@ export function getBasketLocalStorage() {
 
 // Запись id товаров в LS
 export function setBasketLocalStorage(basket) {
-  const basketCount = document.querySelector('.basket__count');
+  const basketCountElements = document.querySelectorAll('.basket__count');
   localStorage.setItem('basket', JSON.stringify(basket));
-  basketCount.textContent = basket.length;
+
+  basketCountElements.forEach(element => {
+    element.textContent = basket.length;
+  });
 }
+
 
 // Проверка, существует ли товар указанный в LS 
 //(если например пару дней не заходил юзер, а товар, который у него в корзине, уже не существует)

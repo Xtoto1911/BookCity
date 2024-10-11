@@ -1,5 +1,12 @@
-import { getProducts } from './card.js';
+import { getProducts, renderStartPage, sliceArrCards, handleCardClick, checkingActiveButtons} from './card.js';
 import { PRODUCTS } from './constant.js';
+import {
+  setBasketLocalStorage,
+  getBasketLocalStorage,
+  checkingRelevanceValueBasket
+} from './utils.js';
+
+
 
 function addProductsToCarousel(products, id) {
   const carouselInner = document.getElementById(id);
@@ -16,7 +23,7 @@ function addProductsToCarousel(products, id) {
 
   for (let i = 0; i < products.length; i += groupSize) {
     const isActive = i === 0 ? 'active' : '';
-    carouselItems += `<div class="carousel-item ${isActive} carusel-cards"><div class="row justify-content-center">`;
+    carouselItems += `<div class="carousel-item ${isActive} carusel-cards"><div class="row cards-main justify-content-center">`;
 
     for (let j = i; j < i + groupSize && j < products.length; j++) {
       const product = products[j];
@@ -27,13 +34,8 @@ function addProductsToCarousel(products, id) {
             <div class="card-body">
               <h5 class="card-title">${product.price} ₽</h5>
               <a href = "#.html?id=${product.id}"><p class="card-text">${product.title}</p></a>
-              <div class = "d-flex justify-content-between">
-                <button class="btn btn-add-basket btn-primary text-nowrap ">Купить</button>
-                <button class="btn btn-light border-1 border-black">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-                  </svg>
-                </button>
+              <div class = "card-body__container d-flex justify-content-center mt-4"> 
+                <button class="btn card__add btn-primary text-nowrap">Купить</button>
               </div>
             </div>
           </div>
@@ -48,7 +50,27 @@ function addProductsToCarousel(products, id) {
 
 async function init() {
   productsData = await getProducts('/data/main.json',productsData);
+  checkingRelevanceValueBasket(productsData);
+
+  
   render()
+  addEventListenersToCards();
+  const basket = getBasketLocalStorage();
+  checkingActiveButtons(basket);
+}
+
+function addEventListenersToCards() {
+  console.log("Много карточек");
+  const cards = document.querySelectorAll('.cards-main');
+
+  if (cards.length === 0) {
+      console.log("Элементы с классом '.cards-main' не найдены.");
+      return; // Прекратите выполнение, если элементы не найдены
+  }
+
+  cards.forEach(card => {
+      card.addEventListener('click', handleCardClick);
+  });
 }
 
 function render(){
@@ -59,22 +81,3 @@ let productsData = []
 init();
 
 window.addEventListener('resize', render);
-
-window.onscroll = function() {
-  let scrollToTopBtn = document.getElementById("scrollToTopBtn");
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    scrollToTopBtn.classList.add("show");
-  } else {
-    scrollToTopBtn.classList.remove("show");
-  }
-};
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
-
-const scrollUpBtn = document.getElementById('scrollToTopBtn');
-scrollUpBtn.addEventListener('click', scrollToTop);
