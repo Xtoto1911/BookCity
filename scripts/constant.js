@@ -11,3 +11,14 @@ export const PRODUCTS = [
   { "image": "img/secondSlideMainHead.jpg", "price": "2799", "description": "Description of Book 10" },
   { "image": "img/secondSlideMainHead.jpg", "price": "1999", "description": "Description of Book 11" }
 ];
+
+export const LSNaming = {
+  BASKET: 'basket',
+  WISH: 'wish'
+}
+
+export const ClassName = {
+  CNT_BASKET: '.basket__count',
+  CNT_WISH: '.wish__count'
+}
+

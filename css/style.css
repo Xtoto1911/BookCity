@@ -76,6 +76,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+
 .default-btn i{
   font-size: 24px;
 }
@@ -93,6 +94,23 @@ h1,h2,h3,h4,h5,h6{
 .default-btn {
   line-height: 30px;
 }
+
+.menu__item {
+  position: relative; /* Устанавливаем родительский элемент как относительно позиционируемый */
+}
+
+.basket__count, .wish__count {
+  position: absolute;
+  right: 15px;  /* Подняли счетчик выше иконки */
+  background-color: red; /* Цвет фона для счётчика */
+  color: white; /* Цвет текста счётчика */
+  border-radius: 50%; /* Круглый счетчик */
+  padding: 2px 6px; /* Добавляем отступы для размера */
+  font-size: 12px; /* Размер текста */
+  font-weight: bold; /* Жирный шрифт */
+  line-height: 1;
+}
+
 
 .header-top-mobile__nav{
   color: rgb(5, 19, 34);
@@ -237,6 +255,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+
+
 @media(max-width: 1200px){
   .menu__item_dropdown{
     display: block;
@@ -264,6 +284,11 @@ h1,h2,h3,h4,h5,h6{
   .header-mid__control,
   .header-top{
     display: none;
+  }
+
+  .basket__count, .wish__count {
+    bottom: 5px;
+    right: 8px;
   }
 
   .default-btn, .navbar-toggler{
