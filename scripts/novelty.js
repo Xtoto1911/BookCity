@@ -1,6 +1,12 @@
 import { getProducts, renderStartPage, sliceArrCards } from './card.js';
 import { switchGridLayout } from './resizeGrid.js';
 
+import {
+  setBasketLocalStorage,
+  getBasketLocalStorage,
+  checkingRelevanceValueBasket
+} from './utils.js';
+
 let productsData = [];
 const COUNT_SHOW_CARDS_CLICK = 8;
 let shownCards = COUNT_SHOW_CARDS_CLICK;
@@ -45,7 +51,8 @@ window.addEventListener('scroll', function() {
     // Передаем обновленное количество карточек для отображения
     shownCards = sliceArrCards(productsData, COUNT_SHOW_CARDS_CLICK, countClickBtnShowCards, shownCards);
     console.log(countClickBtnShowCards, shownCards);
-
+    const basket = getBasketLocalStorage();
+    checkingActiveButtons(basket);
     lastScrollPosition = scrollPosition;
   }
 });

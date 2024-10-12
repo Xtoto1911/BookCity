@@ -33,7 +33,7 @@ function addProductsToCarousel(products, id) {
             <a href = "#.html?id=${product.id}" ><img src="${product.image}" class="card-img-top" alt="${product.title}"></a>
             <div class="card-body">
               <h5 class="card-title">${product.price} ₽</h5>
-              <a href = "#.html?id=${product.id}"><p class="card-text">${product.title}</p></a>
+              <a href = "card.html?id=${product.id}"><p class="card-text">${product.title}</p></a>
               <div class = "card-body__container d-flex justify-content-center mt-4"> 
                 <button class="btn card__add btn-primary text-nowrap">Купить</button>
               </div>

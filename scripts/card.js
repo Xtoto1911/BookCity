@@ -4,11 +4,6 @@ import {
   checkingRelevanceValueBasket
 } from './utils.js';
 
-import {
-  PRODUCTS,
-  LSNaming,
-  ClassName
-} from './constant.js';
 
 let cards = document.querySelector('.cards');
 if(cards){
@@ -72,6 +67,7 @@ export function sliceArrCards(productsData, COUNT_SHOW_CARDS_CLICK, countClickBt
 
   // Возвращаем новое количество отображаемых карточек
   return cards.children.length;
+
 }
 
 export function handleCardClick(event) {
@@ -118,11 +114,11 @@ function createCards(data) {
           </a>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">${price} ₽</h5>
-            <a href="#.html?id=${id}">
+            <a href="card.html?id=${id}">
               <p class="card-text">${title}</p>
             </a>
             <div class="card-body__container d-flex justify-content-center mt-4"> 
-              <button class="btn card__add btn-primary text-nowrap">Купить</button>
+              <button class="btn card__add btn-primary text-nowrap">В корзину</button>
             </div>
           </div>
         </div>
