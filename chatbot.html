@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат-бот Помощник</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        #chat-container {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+            background-color: white;
+        }
+        #message-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .message {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .user {
+            background-color: #e1f7d5;
+            text-align: right;
+        }
+        .bot {
+            background-color: #ffebcc;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chat-container">
+        <!-- Сообщения будут появляться здесь -->
+    </div>
+    <input type="text" id="message-input" placeholder="Введите сообщение..."/>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const messageInput = document.getElementById('message-input');
+
+        // Обработчик события нажатия Enter
+        messageInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const userMessage = messageInput.value;
+                if (userMessage.trim() !== '') {
+                    addMessage(userMessage, 'user');
+                    messageInput.value = ''; // Очищаем поле ввода
+                    getBotResponse(userMessage);
+                }
+            }
+        });
+
+        // Функция для добавления сообщения в чат
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender);
+            messageDiv.textContent = text;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight; // Прокручиваем вниз
+        }
+
+        // Простая логика ответа бота
+        function getBotResponse(userMessage) {
+            let botResponse = 'Извините, я вас не понял.';
+
+            if (userMessage.toLowerCase().includes('привет')) {
+                botResponse = 'Привет! Как я могу помочь?';
+            } else if (userMessage.toLowerCase().includes('как дела')) {
+                botResponse = 'У меня всё отлично, спасибо!';
+            } else if (userMessage.toLowerCase().includes('пока')) {
+                botResponse = 'До свидания!';
+            } else if (userMessage.toLowerCase().includes('что ты умеешь')) {
+                botResponse = 'Я могу отвечать на простые вопросы!';
+            }
+
+            setTimeout(() => {
+                addMessage(botResponse, 'bot');
+            }, 1000); // Задержка для имитации работы бота
+        }
+    </script>
+
+</body>
+</html>
