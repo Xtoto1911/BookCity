@@ -1,4 +1,4 @@
-import { getProducts, renderStartPage, sliceArrCards } from './card.js';
+import { getProducts, renderStartPage, sliceArrCards, checkingActiveButtons } from './card.js';
 import { switchGridLayout } from './resizeGrid.js';
 
 import {
