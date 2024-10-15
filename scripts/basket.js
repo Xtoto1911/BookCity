@@ -32,28 +32,32 @@ async function getProducts() {
 }
 
 function loadProductBasket(data) {
-    cart.textContent = '';
+  cart.textContent = '';
 
-    if (!data || !data.length) {
-        return;
-    }
+  if (!data || !data.length) {
+      return;
+  }
 
-    checkingRelevanceValueBasket(data);
-    const basket = getBasketLocalStorage();
+  checkingRelevanceValueBasket(data);
+  const basket = getBasketLocalStorage();
 
-    if(!basket || !basket.length) {
-        showErrorMessage(NO_ITEMS_CART)
-        return;
-    }
+  if (!basket || !basket.length) {
+      showErrorMessage(NO_ITEMS_CART);
+      document.querySelector('.btn-send').disabled = true; // Disable button
+      return;
+  }
 
-    const findProducts = data.filter(item => basket.includes(String(item.id)));
+  document.querySelector('.btn-send').disabled = false; // Enable button if items exist
 
-    if(!findProducts.length) {
-        return;
-    }
+  const findProducts = data.filter(item => basket.includes(String(item.id)));
 
-    renderProductsBasket(findProducts);
+  if (!findProducts.length) {
+      return;
+  }
+
+  renderProductsBasket(findProducts);
 }
+
 
 function delProductBasket(event) {
     const targetButton = event.target.closest('.cart__del-card');
