@@ -12,7 +12,7 @@
   <script src="/scripts/basket.js" type="module" defer></script>
   <title>Карточка</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <header class="header-top">
     <div class="container-xl p-0 ps-md-3 pe-md-3">
       <div class="d-flex justify-content-between align-items-center">
@@ -145,12 +145,16 @@
         </div>
     </div>
   </header>
-  <div class="container">
+  <div class="container flex-fill">
     <h1>Корзина</h1>
-    <div class="cart"></div>
-    <button class="btn-send">Оформить заказ</button>
+      <!-- Карточки товаров -->
+      <div class="cart"></div>
+      <!-- Общая сумма -->
+      <div class="total-price"></div>
+      <!-- Кнопка оформления заказа -->
+      <button class="btn-send">Оформить заказ</button>
   </div>
-  <footer class="footer bg-dark text-light pt-4 pb-4 mt-auto fixed-bottom">
+  <footer class="footer bg-dark text-light pt-4 pb-4 mt-auto">
     <div class="container-xl d-flex flex-column flex-lg-row justify-content-between align-items-start">
       <div class="footer-left me-lg-5 mb-4 mb-lg-0">
         <h5 class="footer-title">О магазине</h5>

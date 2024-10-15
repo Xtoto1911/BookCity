@@ -97,19 +97,3 @@ import {
     errorElement.textContent = message;
     wrapper.appendChild(errorElement);
   }
-  
-  // Функции из utils.js
-  function getBasketLocalStorage() {
-    const basket = localStorage.getItem('basket');
-    return basket ? JSON.parse(basket) : [];
-  }
-  
-  function setBasketLocalStorage(basket) {
-    localStorage.setItem('basket', JSON.stringify(basket));
-  }
-  
-  function checkingRelevanceValueBasket(data) {
-    const basket = getBasketLocalStorage();
-    const updatedBasket = basket.filter(id => data.some(product => product.id === id));
-    setBasketLocalStorage(updatedBasket);
-  }

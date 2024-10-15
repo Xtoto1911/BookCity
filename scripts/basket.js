@@ -79,7 +79,7 @@ function renderProductsBasket(arr) {
             <div class="cart__img">
                 <img src="${image}" alt="${title}">
             </div>
-            <div class="cart__title">${title}</div>
+            <div class="cart__title"><a href = "card.html?id=${id}">${title}</a></div>
             <div class="cart__block-btns">
                 <div class="cart__minus">-</div>
                 <div class="cart__count">1</div>
