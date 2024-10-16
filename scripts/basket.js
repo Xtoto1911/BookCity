@@ -32,32 +32,28 @@ async function getProducts() {
 }
 
 function loadProductBasket(data) {
-  cart.textContent = '';
+    cart.textContent = '';
 
-  if (!data || !data.length) {
-      return;
-  }
+    if (!data || !data.length) {
+        return;
+    }
 
-  checkingRelevanceValueBasket(data);
-  const basket = getBasketLocalStorage();
+    checkingRelevanceValueBasket(data);
+    const basket = getBasketLocalStorage();
 
-  if (!basket || !basket.length) {
-      showErrorMessage(NO_ITEMS_CART);
-      document.querySelector('.btn-send').disabled = true; // Disable button
-      return;
-  }
+    if(!basket || !basket.length) {
+        showErrorMessage(NO_ITEMS_CART)
+        return;
+    }
 
-  document.querySelector('.btn-send').disabled = false; // Enable button if items exist
+    const findProducts = data.filter(item => basket.includes(String(item.id)));
 
-  const findProducts = data.filter(item => basket.includes(String(item.id)));
+    if(!findProducts.length) {
+        return;
+    }
 
-  if (!findProducts.length) {
-      return;
-  }
-
-  renderProductsBasket(findProducts);
+    renderProductsBasket(findProducts);
 }
-
 
 function delProductBasket(event) {
     const targetButton = event.target.closest('.cart__del-card');
@@ -83,7 +79,7 @@ function renderProductsBasket(arr) {
             <div class="cart__img">
                 <img src="${image}" alt="${title}">
             </div>
-            <div class="cart__title"><a href = "card.html?id=${id}">${title}</a></div>
+            <div class="cart__title">${title}</div>
             <div class="cart__block-btns">
                 <div class="cart__minus">-</div>
                 <div class="cart__count">1</div>

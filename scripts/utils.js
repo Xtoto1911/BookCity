@@ -15,6 +15,8 @@ export function setBasketLocalStorage(basket) {
 }
 
 
+
+
 // Проверка, существует ли товар указанный в LS 
 //(если например пару дней не заходил юзер, а товар, который у него в корзине, уже не существует)
 export function checkingRelevanceValueBasket(productsData) {
