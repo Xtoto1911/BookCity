@@ -27,10 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Добавление сообщений в чат
-  function addMessage(text, sender) {
+  function addMessage(text, sender, isHtml = false) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message', sender);
-    messageDiv.textContent = text;
+    
+    if (isHtml) {
+      messageDiv.innerHTML = text; // Используем innerHTML для вставки HTML
+    } else {
+      messageDiv.textContent = text; // Для простого текста используем textContent
+    }
+    
     chatBody.appendChild(messageDiv);
     chatBody.scrollTop = chatBody.scrollHeight; // Прокручиваем вниз
   }
@@ -50,9 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (lowerCaseMessage.includes('что ты умеешь')) {
       botResponse = 'Я могу отвечать на простые вопросы!';
     } else if (lowerCaseMessage.includes('манга')) {
-      botResponse = 'Вот ссылка на страницу с мангой: <a href="manga.html">Манга</a>';
+      botResponse = 'Вот ссылка на страницу с мангой: <a href="manga.html" target="_blank">Манга</a>';
+      addMessage(botResponse, 'bot', true); // Передаем true, чтобы вставить HTML-сообщение
+      return;
     } else if (lowerCaseMessage.includes('книги')) {
-      botResponse = 'Вот ссылка на страницу с книгами: <a href="books.html">Книги</a>';
+      botResponse = 'Вот ссылка на страницу с книгами: <a href="books.html" target="_blank">Книги</a>';
+      addMessage(botResponse, 'bot', true); // Передаем true, чтобы вставить HTML-сообщение
+      return;
     }
 
     setTimeout(() => {

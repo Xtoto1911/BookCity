@@ -3,6 +3,17 @@
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: inherit; 
+}
+
+
+a:hover {
+  color: inherit; /* Не меняем цвет при наведении */
+  text-decoration: none; /* Подчеркивание при наведении также убрано */
+}
+
 body{
   color: white;
   margin: 0;
