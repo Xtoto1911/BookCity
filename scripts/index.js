@@ -20,20 +20,20 @@ function addProductsToCarousel(products, id) {
   } else {
     groupSize = 4;
   }
-
-  for (let i = 0; i < products.length; i += groupSize) {
+  const ln = Math.min(products.length, 8)
+  for (let i = 0; i < ln; i += groupSize) {
     const isActive = i === 0 ? 'active' : '';
     carouselItems += `<div class="carousel-item ${isActive} carusel-cards"><div class="row cards-main justify-content-center">`;
 
-    for (let j = i; j < i + groupSize && j < products.length; j++) {
+    for (let j = i; j < i + groupSize && j < ln; j++) {
       const product = products[j];
       carouselItems += `
         <div class="col-lg-3 col-md-4 col-sm-5 col-12 p-1" href = "#">
           <div class="card carusel-cards__item" data-product-id="${product.id}">
-            <a href = "#.html?id=${product.id}" ><img src="${product.image}" class="card-img-top" alt="${product.title}"></a>
+            <a href = "#.html?id=${product.id} class = "h-50" ><img src="${product.image}" class="card-img-top" alt="${product.title}"></a>
             <div class="card-body">
               <h5 class="card-title">${product.price} ₽</h5>
-              <a href = "card.html?id=${product.id}"><p class="card-text">${product.title}</p></a>
+              <a href = "card.html?id=${product.id}&category=${product.category}"><p class="card-text">${product.title}</p></a>
               <div class = "card-body__container d-flex justify-content-center mt-4"> 
                 <button class="btn card__add btn-primary text-nowrap">Купить</button>
               </div>
@@ -75,7 +75,7 @@ function addEventListenersToCards() {
 
 function render(){
   addProductsToCarousel(productsData, 'newProductCarouselInner');
-  addProductsToCarousel(productsData, 'goodProductCarouselInner');
+  //addProductsToCarousel(productsData, 'goodProductCarouselInner');
 }
 let productsData = []
 init();

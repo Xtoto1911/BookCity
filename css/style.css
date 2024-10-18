@@ -11,7 +11,7 @@ body{
 .header-mid {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 
@@ -66,6 +66,8 @@ h1,h2,h3,h4,h5,h6{
   background: rgb(26, 100, 185);
 }
 
+
+
 .default-btn {
   background-color: rgb(26, 100, 185);
   color: white;
@@ -97,6 +99,11 @@ h1,h2,h3,h4,h5,h6{
 
 .menu__item {
   position: relative; /* Устанавливаем родительский элемент как относительно позиционируемый */
+}
+
+.product__img,.card-img{
+  max-width: 50%;
+  min-width: 50%;
 }
 
 .basket__count, .wish__count {
@@ -139,13 +146,13 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .main-carousel__item{
-  height: 450px;
+  height: 100%;
 }
 
-.main-carousel__item img{
+.main-carousel__item img {
   height: 100%;
   width: 100%;
-  object-fit: fill; 
+  object-fit: cover;
 }
 
 .main-information-block__link{
@@ -161,7 +168,7 @@ h1,h2,h3,h4,h5,h6{
 
 .carusel-cards__item {
   margin: 10px 0;
-  height: 450px;
+  height: 100%;
 }
 
 .product-carousel__inner {
@@ -227,8 +234,8 @@ h1,h2,h3,h4,h5,h6{
   position: fixed;
   width: 50px;
   height: 50px;
-  bottom: 40px;
-  right: 40px;
+  bottom: 80px;
+  right: 25px;
   z-index: 100;
   background-color: #007bff;
   color: white;
@@ -259,6 +266,76 @@ h1,h2,h3,h4,h5,h6{
   width: 100%;
 }
 
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+#message-input {
+  width: calc(100% - 20px);
+  margin: 0 auto 10px auto;
+}
+
+.message {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.user {
+  background-color: #e1f7d5;
+  text-align: right;
+}
+
+.bot {
+  background-color: #ffebcc;
+  text-align: left;
+}
+
+.d-none {
+  display: none;
+}
+
 
 
 @media(max-width: 1200px){
@@ -274,6 +351,10 @@ h1,h2,h3,h4,h5,h6{
   .main-information-block{
     margin-top: 20px;
   }
+
+  .main-carousel__item img {
+    min-height: 60vh; /* Еще больше для широких экранов */
+}
 }
 
 @media(max-width: 1000px){
@@ -332,6 +413,10 @@ h1,h2,h3,h4,h5,h6{
   .carusel-cards__item {
     margin: 5px 0;  /* Для мобильных устройств уменьшаем отступы */
   }
+
+  .main-carousel__item img {
+    min-height: 50vh; /* Увеличиваем высоту для больших экранов */
+}
 }
 
 

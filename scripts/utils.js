@@ -1,20 +1,20 @@
 // Получение id из LS
 export function getBasketLocalStorage() {
   const cartDataJSON = localStorage.getItem('basket');
+  console.log(cartDataJSON)
   return cartDataJSON ? JSON.parse(cartDataJSON) : [];
 }
 
 // Запись id товаров в LS
 export function setBasketLocalStorage(basket) {
   const basketCountElements = document.querySelectorAll('.basket__count');
+  console.log(basket)
   localStorage.setItem('basket', JSON.stringify(basket));
 
   basketCountElements.forEach(element => {
     element.textContent = basket.length;
   });
 }
-
-
 
 
 // Проверка, существует ли товар указанный в LS 

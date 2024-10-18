@@ -76,11 +76,9 @@ export function handleCardClick(event) {
     console.log("нет");
     return
   }
-
   const card = targetButton.closest('.card');
   const id = card.dataset.productId;
   const basket = getBasketLocalStorage();
-
   if (basket.includes(id)) return;
 
   basket.push(id);
@@ -105,7 +103,8 @@ export function checkingActiveButtons(basket) {
 // Функция создания карточек
 function createCards(data) {
   data.forEach(card => {
-    const { id, image, title, price } = card;
+    const { id, image, title, price, category} = card;
+    console.log(category)
     const cardItem = `
       <div class="card_contaiter col-lg-3 col-md-3 col-6 p-1">
         <div class="card h-100" data-product-id="${id}">
@@ -114,7 +113,7 @@ function createCards(data) {
           </a>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">${price} ₽</h5>
-            <a href="card.html?id=${id}">
+            <a href="card.html?id=${id}&category=${category}">
               <p class="card-text">${title}</p>
             </a>
             <div class="card-body__container d-flex justify-content-center mt-4"> 
@@ -127,3 +126,4 @@ function createCards(data) {
     cards.insertAdjacentHTML('beforeend', cardItem);
   });
 }
+

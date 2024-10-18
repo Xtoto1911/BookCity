@@ -81,16 +81,23 @@
 
             if (userMessage.toLowerCase().includes('привет')) {
                 botResponse = 'Привет! Как я могу помочь?';
-            } else if (userMessage.toLowerCase().includes('как дела')) {
+                mess(botResponse);
+            }if (userMessage.toLowerCase().includes('как дела')) {
                 botResponse = 'У меня всё отлично, спасибо!';
-            } else if (userMessage.toLowerCase().includes('пока')) {
+                mess(botResponse);
+            }if (userMessage.toLowerCase().includes('пока')) {
                 botResponse = 'До свидания!';
-            } else if (userMessage.toLowerCase().includes('что ты умеешь')) {
+                mess(botResponse);
+            }if (userMessage.toLowerCase().includes('что ты умеешь')) {
                 botResponse = 'Я могу отвечать на простые вопросы!';
+                mess(botResponse);
             }
 
-            setTimeout(() => {
-                addMessage(botResponse, 'bot');
+        }
+        
+        function mess(mess){
+          setTimeout(() => {
+                addMessage(mess, 'bot');
             }, 1000); // Задержка для имитации работы бота
         }
     </script>

@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/8c573c3482.js" crossorigin="anonymous"></script>
   <script src="/scripts/index.js" type="module" defer></script>
+  <script src="scripts/chatbot.js" defer></script>
   <script src="/scripts/scrollUp.js" type="module" defer></script>
   <title>BookCity</title>
 </head>
@@ -48,7 +49,7 @@
       </div>
     </div>
   </header>
-
+  
   <header class="header-top-mobile">
     <nav class="navbar header-top-mobile__nav d-flex justify-content-between align-items-center">
       <div class="ms-3">
@@ -74,6 +75,17 @@
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav">
+        <hr>
+        <li class="nav-item">
+          <h3 class="nav-link" >Каталог</a>
+        </li>
+        <hr>
+        <li class="nav-item">
+          <a class="nav-link" href="manga.html">Манга</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="book.html">Книги</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Россия, Кострома</a>
         </li>
@@ -105,15 +117,23 @@
       </ul>
     </div>
   </div>
-
+  
   <header class="header-mid">
     <div class="container-xl d-flex justify-content-between align-items-center ps-md-3 pe-md-3">
       <nav class="header-mid__logo align-items-start">
         <ul class="menu d-flex align-items-center">
           <li class="menu__item menu__item_logo me-2"><i class="fa-solid fa-book-open-reader"></i></li>
-          <li class="menu__item menu__item_logo"><a href="index.html"><h1>BookCity</h1></a></li>
-          <li class="menu__item manu__item_catalog">
-
+          <li class="menu__item menu__item_logo me-2"><a href="index.html"><h1>BookCity</h1></a></li>
+          <li class="menu__item manu__item_catalog d-md-block d-none">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Каталог
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="book.html">Книги</a></li>
+                <li><a class="dropdown-item" href="manga.html">Манга</a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>
@@ -130,47 +150,16 @@
       </nav>
     </div>
   </header>
-
+  
   <header class="header-bottom">
     <div class="container-xl">
         <div class="scrollable-buttons d-flex">
-          <button class="header-bottom__button">Новинки</button>
-          <button class="header-bottom__button">Комиксы и манга</button>
+          <button class="header-bottom__button" onclick="window.location.href = 'novelty.html'">Новинки</button>
+          <button class="header-bottom__button" onclick="window.location.href = 'manga.html'">Комиксы и манга</button>
         </div>
     </div>
   </header>
-
   <main class="main-page container-xl mt-4 mb-4">
-    <div class="main-carousel me-xl-auto">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active main-carousel__item">
-            <img src="img/firstSlideMainHead.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item main-carousel__item">
-            <img src="img/secondSlideMainHead.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item main-carousel__item">
-            <img src="img/thirdSlideMainHead.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-
     <div class="product-shelf mt-4">
       <div class="card-slider__header d-flex flex-row justify-content-between">
         <h4 class="card-slider__title">Новинки Литературы</h4>
@@ -195,7 +184,7 @@
         </button>
       </div>
     </div>
-    
+    <!--
     <div class="product-shelf mt-4">
       <div class="card-slider__header d-flex flex-row justify-content-between">
         <h4 class="card-slider__title">Лучшее из Лучших</h4>
@@ -208,7 +197,7 @@
       </div>
       <div id="goodProductCarousel" class="carousel slide">
         <div class="carousel-inner product-carousel__inner" id="goodProductCarouselInner">
-          <!-- Карточки товаров будут загружаться сюда -->
+          
         </div>
         <div class="carousel-control-prev">
           <span class="carousel-control-prev-icon" aria-hidden="true" type="button" data-bs-target="#goodProductCarousel" data-bs-slide="prev"></span>
@@ -219,7 +208,8 @@
           <span class="visually-hidden">Next</span>
         </div>
       </div>
-    </div>    
+    </div>  
+    --> 
   </main>
   <footer class="footer bg-dark text-light pt-4 pb-4">
     <div class="container-xl d-flex flex-column flex-lg-row justify-content-between align-items-start">
@@ -260,7 +250,20 @@
   <button id="scrollToTopBtn" class="scroll-to-top">
     ↑
   </button>
+  <button id="chatButton" class="btn btn-primary chat-button">
+    <i class="fa-solid fa-comment-dots"></i>
+  </button>
   
+  <div id="chat-container" class="chat-container d-none">
+    <div class="chat-header">
+      <h5>Чат-бот</h5>
+      <button id="closeChat" class="btn-close"></button>
+    </div>
+    <div id="chat-body" class="chat-body">
+      <!-- Сообщения чата -->
+    </div>
+    <input type="text" id="message-input" class="form-control mt-2" placeholder="Введите сообщение...">
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
